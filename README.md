@@ -19,9 +19,7 @@ node .
 
 ## Author
 
-👤 **ILostMyMedic**
-
-* Website: https://share-park.app
+👤 **Martin Johansen**
 * Github: [@ILostMyMedic](https://github.com/ILostMyMedic)
 
 ## 🤝 Contributing
@@ -34,6 +32,3 @@ Feel free to check [issues page](https://github.com/coffeebottv/CoffeeBot_Discor
 
 Give a ⭐️ if this project helped you!
 
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
