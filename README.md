@@ -11,6 +11,14 @@
 npm install
 ```
 
+## Edit .env
+
+```sh
+NODE_ENV='development'
+DISCORD_TOKEN_DEV=[YOUR_DISCORD_KEY]
+DISCORD_TOKEN_PROD=[YOUR_DISCORD_KEY]
+```
+
 ## Run tests
 
 ```sh
