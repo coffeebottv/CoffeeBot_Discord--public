@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 
 const interactions = new Schema({
-    serverID: String,
+    serverID: mongoose.Schema.Types.ObjectId, // server ref
     reactions: [
         {
             input: {
