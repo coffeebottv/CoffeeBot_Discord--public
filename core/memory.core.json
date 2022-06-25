@@ -1,9 +1,24 @@
 {
-    "GUILDS": {},
+    "GUILDS": {
+        "SERVER_ID": {
+            "ChannelX": "x",
+            "ChannelY": "y",
+            "ChannelZ": "z"
+        }
+    },
     "WARNINGS": {},
-    "BANS": {},
-    "EXP.CHAT": {},
-    "EXP.VOICE": {},
+    "BANNED": {
+        "server-uid": {
+            "uid": "123",
+            "user": "homer",
+            "server": "server",
+            "time": "27.12.2022 12:00:00",
+            "reason": "test",
+            "by": "peter"
+        }
+    },
+    "EXP_CHAT": {},
+    "EXP_VOICE": {},
     "MESSAGES:": {},
     "ECONEMY": {}
 }
