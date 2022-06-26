@@ -9,7 +9,7 @@ const fs = require('fs');
 
 // <======== Cache files =================================>
 const BANNED = require('./cache/ban.cache.js')
-const ECONEMY = require('./cache/econemy.cache.js')
+const ECONEMY = require('./cache/economy.cache.js')
 const EXP_CHAT = require('./cache/exp.chat.cache.js')
 const EXP_VOICE = require('./cache/exp.voice.cache.js')
 const GUILDS = require('./cache/guild.cache.js')
@@ -75,7 +75,8 @@ Bot.on('ready', async () => {
         // CacheStatus.addRow('Guilds', MEMORY.GUILDS_STATUS)
         // CacheStatus.addRow('Messages', MEMORY.MESSAGES_STATUS)
         // CacheStatus.addRow('Warnings', MEMORY.WARNINGS_STATUS)
-    console.log(CacheStatus.toString())
+    // console.log(CacheStatus.toString())
+    console.log(MEMORY.BANNED_STATUS.Map)
 
 
 
@@ -93,7 +94,7 @@ Bot.on('ready', async () => {
 Bot.on('messageCreate', async message => {
     if(message.author.bot) return;
 
-    // Blacklisted_words.ValidateMessage(message)
+    
 });
 // <=====================================================================>
 

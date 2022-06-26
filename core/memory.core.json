@@ -1,20 +1,318 @@
 {
     "GUILDS": {
         "SERVER_ID": {
-            "ChannelX": "x",
-            "ChannelY": "y",
-            "ChannelZ": "z"
+            "Details": {
+                "Server": {
+                    "name": "SERVER_NAME",
+                    "id": "SERVER_ID"
+                },
+                "Owner": {
+                    "id": "OWNER_ID",
+                    "username": "OWNER_USERNAME"
+                },
+                "ServerCount": "COUNT"
+            },
+            "Prefix": "PREFIX",
+            "Messages": [
+                {
+                    "Type": "Welcome",
+                    "Message": "Welcome to the server {{user.mention}}!",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Leave",
+                    "Message": "{{user.mention}} has left the server.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Ban",
+                    "Message": "{{user.mention}} has been banned from the server.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Unban",
+                    "Message": "{{user.mention}} has been unbanned from the server.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Kick",
+                    "Message": "{{user.mention}} has been kicked from the server.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Nickname",
+                    "Message": "{{user.mention}} has changed their nickname to {{user.nick}}.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Role",
+                    "Message": "{{user.mention}} has been given the role {{role.name}}.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Mute",
+                    "Message": "{{user.mention}} has been muted.",
+                    "Channel": "CHANNEL_ID"
+                },
+                {
+                    "Type": "Unmute",
+                    "Message": "{{user.mention}} has been unmuted.",
+                    "Channel": "CHANNEL_ID"
+                }
+            ],
+            "Moderator": {
+                "Role": {
+                    "id": "ROLE_ID",
+                    "name": "ROLE_NAME"
+                },
+                "Members": [
+                    {
+                        "id": "MEMBER_ID",
+                        "username": "MEMBER_USERNAME",
+                        "date": "MEMBER_DATE"
+                    }
+                ]
+            },
+            "Administrator": {
+                "Role": {
+                    "id": "ROLE_ID",
+                    "name": "ROLE_NAME"
+                },
+                "Members": [
+                    {
+                        "id": "MEMBER_ID",
+                        "username": "MEMBER_USERNAME",
+                        "date": "MEMBER_DATE"
+                    }
+                ]
+            },
+            "Experience": {
+                "Boost": {
+                    "Channel": [
+                        {
+                            "id": "CHANNEL_ID",
+                            "name": "CHANNEL_NAME",
+                            "multiplier": "MULTIPLIER"
+                        }
+                    ],
+                    "Role": [
+                        {
+                            "id": "ROLE_ID",
+                            "name": "ROLE_NAME",
+                            "multiplier": "MULTIPLIER"
+                        }
+                    ]
+                },
+                "Range": [
+                    {
+                        "Type": "Chat",
+                        "Min": "MIN",
+                        "Max": "MAX",
+                        "Interval": "INTERVAL",
+                        "Enabled": true
+                    },
+                    {
+                        "Type": "Voice",
+                        "Min": "MIN",
+                        "Max": "MAX",
+                        "Interval": "INTERVAL",
+                        "Enabled": true
+                    }
+                ]
+            },
+            "Economy": {
+                "prices": [],
+                "currency": {
+                    "name": "NAME",
+                    "symbol": "SYMBOL"
+                }
+            },
+            "AutoMod": {
+                "Blacklist": {
+                    "Enabled": true,
+                    "Settings": {
+                        "Type": "Delete",
+                        "Message": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "Your message have been deleted from {{server.name}} by AutoMod. Reason: Blacklisted word {{blacklist.word}}. You have been given a 5p AMWS score, for a total of {{member.AMWS}}."
+                        },
+                        "Actions": [
+                            {
+                                "Type": "Delete",
+                                "AMWS": "5p"
+                            },
+                            {
+                                "Type": "Mute",
+                                "AMWS": "10p",
+                                "Time": "2h"
+                            },
+                            {
+                                "Type": "Kick",
+                                "AMWS": "50%"
+                            },
+                            {
+                                "Type": "Ban",
+                                "AMWS": "MAX",
+                                "Time": "24h"
+                            }
+                        ]
+                    }
+                },
+                "Phishing": {
+                    "Enabled": true,
+                    "Settings": {
+                        "Type": "Delete",
+                        "Message": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "Your message have been deleted from {{server.name}} by AutoMod. Reason: Phishing link. You have been given a 5p AMWS score, for a total of {{member.AMWS}}."
+                        },
+                        "Actions": [
+                            {
+                                "Type": "Delete",
+                                "AMWS": "5p"
+                            },
+                            {
+                                "Type": "Mute",
+                                "AMWS": "10p",
+                                "Time": "2h"
+                            },
+                            {
+                                "Type": "Kick",
+                                "AMWS": "50%"
+                            },
+                            {
+                                "Type": "Ban",
+                                "AMWS": "MAX",
+                                "Time": "24h"
+                            }
+                        ]
+                    }
+                }
+            },
+            "Functions": {
+                "Experience": {
+                    "Level": {
+                        "Enabled": true,
+                        "Settings": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "You have leveled up to level {{member.level}}!"
+                        }
+                    }
+                },
+                "Economy": {
+                    "Balance": {
+                        "Enabled": true,
+                        "Settings": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "You have {{member.balance}} {{guild.currency.symbol}}!"
+                        }
+                    },
+                    "Payment": {
+                        "Enabled": true,
+                        "Settings": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "You have received {{member.payment}} {{guild.currency.symbol}}!"
+                        }
+                    },
+                    "Transfer": {
+                        "Enabled": true,
+                        "Settings": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "You have transferred {{member.transfer}} {{guild.currency.symbol}} to {{member.transferTo}}!"
+                        }
+                    },
+                    "Prices": {
+                        "Enabled": true,
+                        "Settings": {
+                            "Type": "DM",
+                            "Channel": "",
+                            "Message": "You have bought {{guild.price}} {{guild.currency.symbol}}! Your balance is now {{member.balance}} {{guild.currency.symbol}}."
+                        }
+                    }
+                }
+            },
+            "Commands": [
+                {
+                    "Name": "cmd_test",
+                    "Description": "Custom test command",
+                    "Aliases": [
+                        "cmd"
+                    ],
+                    "Cooldown": "1m",
+                    "Permission": {
+                        "Member": true,
+                        "Moderator": true,
+                        "Administrator": true,
+                        "Owner": true,
+                        "Roles": [
+                            "ROLE_ID"
+                        ]
+                    },
+                    "Hidden": true,
+                    "_callback": ""
+                }
+            ],
+            "Levels": [
+                { "Name": "1", "Exp": "100", "Role": "role_id" },
+                { "Name": "2", "Exp": "255", "Role": "role_id" },
+                { "Name": "3", "Exp": "475", "Role": "role_id" },
+                { "Name": "4", "Exp": "770", "Role": "role_id" },
+                { "Name": "5", "Exp": "1150", "Role": "role_id" },
+                { "Name": "6", "Exp": "1620", "Role": "role_id" },
+                { "Name": "7", "Exp": "2205", "Role": "role_id" },
+                { "Name": "8", "Exp": "2900", "Role": "role_id" },
+                { "Name": "9", "Exp": "3720", "Role": "role_id" },
+                { "Name": "10", "Exp": "4675", "Role": "role_id" },
+                { "Name": "11", "Exp": "5775", "Role": "role_id" },
+                { "Name": "12", "Exp": "7030", "Role": "role_id" },
+                { "Name": "13", "Exp": "8450", "Role": "role_id" },
+                { "Name": "14", "Exp": "10045", "Role": "role_id" },
+                { "Name": "15", "Exp": "11825", "Role": "role_id" },
+                { "Name": "16", "Exp": "13800", "Role": "role_id" },
+                { "Name": "17", "Exp": "15980", "Role": "role_id" },
+                { "Name": "18", "Exp": "18375", "Role": "role_id" },
+                { "Name": "19", "Exp": "20995", "Role": "role_id" },
+                { "Name": "20", "Exp": "23850", "Role": "role_id" },
+                { "Name": "21", "Exp": "26950", "Role": "role_id" },
+                { "Name": "22", "Exp": "30305", "Role": "role_id" },
+                { "Name": "23", "Exp": "33925", "Role": "role_id" },
+                { "Name": "24", "Exp": "37820", "Role": "role_id" },
+                { "Name": "25", "Exp": "42000", "Role": "role_id" }
+            ]
         }
     },
-    "WARNINGS": {},
-    "BANNED": {
+    "WARNINGS": {
         "server-uid": {
             "uid": "123",
             "user": "homer",
             "server": "server",
-            "time": "27.12.2022 12:00:00",
+            "date": "24.06.2022 12:00:00",
             "reason": "test",
             "by": "peter"
+        }
+    },
+    "BANNED": {
+        "server-uid": {
+            "member": {
+                "uid": "123",
+                "username": "homer"
+            },
+            "server": {
+                "id": "657",
+                "name": "server_name"
+            },
+            "time": "25.06.2022 23:44:00",
+            "reason": "test",
+            "by": {
+                "uid": "123",
+                "username": "peter"
+            }
         }
     },
     "EXP_CHAT": {},

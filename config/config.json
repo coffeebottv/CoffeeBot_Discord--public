@@ -6,5 +6,6 @@
         {
             
         }
-    ]
+    ],
+    "dashboard": "https://coffeebot.tv/dashboard/{server}"
 }

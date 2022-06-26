@@ -10,14 +10,13 @@ const load = (BAN_MEMORY) => {
 
     for (const [key, value] of Object.entries(BAN_MEMORY)) {
         const data = {
-            uid: value.uid,
-            user: value.username,
+            member: value.member,
             server: value.server,
-            time: countdown(value.timer),
+            time: countdown(value.timer, value.member, value.server),
             reason: value.reason,
             by: value.by,
         }
-        BANS.set(key, data)
+        BANS.set(`${value.server.id} - ${value.member.uid}`, data)
     }
 
     return {
@@ -31,11 +30,12 @@ const load = (BAN_MEMORY) => {
 
 
 const countdown = (time = '100y', user, server) => {
-    if (!isNaN(time)) return;
+    
 
     return (
         setTimeout(() => {
-            BANS.delete(`${server} - ${user}`)
+            console.log(user.username + ' has been unbanned from ' + server.name)
+            // BANS.delete(`${server.id} - ${user.id}`)
         }, ms(time))
     )
 }
