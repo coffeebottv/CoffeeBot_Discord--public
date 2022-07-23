@@ -14,9 +14,11 @@ npm install
 ## Edit .env
 
 ```sh
-NODE_ENV='development'
+ENV="development"
 DISCORD_TOKEN_DEV=[YOUR_DISCORD_KEY]
 DISCORD_TOKEN_PROD=[YOUR_DISCORD_KEY]
+MONGODB_URI_PROD=[YOUR_MONGODB_LINK]
+MONGODB_URI_DEV=[YOUR_MONGODB_LINK]
 ```
 
 ## Run tests
